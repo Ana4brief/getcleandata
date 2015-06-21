@@ -1,3 +1,13 @@
+#task 1
+subject_test<-read.table("test/subject_test.txt")
+X_test<-read.table("test/X_test.txt")
+y_test<-read.table("test/y_test.txt")
+subject_train<-read.table("train/subject_train.txt")
+X_train<-read.table("train/X_train.txt")
+y_train<-read.table("train/y_train.txt")
+all_test<-cbind(subject_test,X_test,y_test)
+all_test$dataset<-rep("test",dim(all_test)[1])
+all_train<-cbind(subject_train,X_train,y_train)
 all_train$dataset<-rep("train",dim(all_train)[1])
 all<-rbind(all_train,all_test)
 #task 4
